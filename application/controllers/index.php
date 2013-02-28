@@ -5,18 +5,18 @@
  * @author 张浩
  */
 
-class User extends CI_Controller {
+class Index extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('base_mdl', 'base');
 	}
 
-	/**ff
+	/**
 	 * @deprecated 默认方法
 	 */
 	public function index() {
-		$this->login();
+		$this->load->view(THEME.'/index');
 	}
 
 	/**
