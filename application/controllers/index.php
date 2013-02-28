@@ -12,7 +12,7 @@ class User extends CI_Controller {
 		$this->load->model('base_mdl', 'base');
 	}
 
-	/**
+	/**ff
 	 * @deprecated 默认方法
 	 */
 	public function index() {
