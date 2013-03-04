@@ -1,15 +1,25 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 $this->load->view('admin/header');
 ?>
-<h2><?=intval($this->input->get('cid')) ? '修改' : '添加'?></h2>
+<h2><?=intval($this->input->get('cid')) ? '修改' : '添加'?><div class="operate"><a href="<?=site_url('admin/content/lists')?>">管理</a></div></h2>
 <div class="slider3">
-	<form action="<?=site_url('admin/content/op'.(intval($this->input->get('cid')) ? '?cid='.intval($this->input->get('cid')) : ''))?>" method="POST" enctype="multipart/form-data">
+	<form action="<?=site_url('admin/content/op'.(intval($this->input->get('id')) ? '?id='.intval($this->input->get('id')) : ''))?>" method="POST" enctype="multipart/form-data">
 	<table cellspacing="0" cellpadding="0" border="0" class="table1">
 		<tr>
 			<th><b>*</b> 标题：</th>
 			<td>
 				<input type="text" name="title" value="<?=set_value('title', isset($content['title']) ? $content['title'] : '')?>" class="input2"/>
 				<?php if(form_error('title')) { echo form_error('title'); } ?>
+			</td>
+		</tr>
+		<tr>
+			<th><b>*</b> 分类：</th>
+			<td>
+				<select name="tid">
+				<?php foreach($contType as $k=>$v):?>
+					<option value="<?=$k?>"><?=$v?></option>
+				<?php endforeach;?>
+				</select>
 			</td>
 		</tr>
 		<tr>

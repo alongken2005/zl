@@ -39,39 +39,24 @@
 <body>
 	<div id="topmenu" class="header">
 		<?='欢迎你，'.get_cookie('username').'&nbsp;<a href="'.site_url('admin/login/login_out').'">退出</a>'?>
-		| <a href="<?=site_url('movie')?>" class="l-link2" target="_blank">儿童之路首页</a>
+		| <a href="<?=site_url('movie')?>" class="l-link2" target="_blank">龙战官网首页</a>
 	</div>
 	<div id="mainbox" style="width:99.3%; margin:0 auto; margin-top:4px; ">
 		<div position="left"  title="主要菜单" class="slider">
-			<div title="运河电影">
-				<ul>
-					<li><a href="<?=site_url('admin/movie/lists')?>" class="add_tab" tabid="home">电影</a></li>
-					<li><a href="<?=site_url('admin/mview/lists')?>" class="add_tab">影视欣赏</a></li>
-					<li><a href="<?=site_url('admin/mclips/lists')?>" class="add_tab">电影片花</a></li>
-					<li><a href="<?=site_url('admin/mimage/lists')?>" class="add_tab">电影图片</a></li>
-					<li><a href="<?=site_url('admin/movie/ticketlog')?>" class="add_tab">索票记录</a></li>
-				</ul>
-			</div>
-			<div title="视频教案管理">
+			<div title="龙战官网">
 				<ul>
 					<li>
-						<a href="<?=site_url('admin/stuff/lists?kind=video')?>" class="add_tab">视频管理</a>
+						<a href="<?=site_url('admin/content/lists')?>" class="add_tab left">文章内容</a>
 					</li>
 					<li>
-						<a href="<?=site_url('admin/stuff/lists?kind=stuff')?>" class="add_tab">教案管理</a>
-					</li>
-					<li>
-						<a href="<?=site_url('admin/author/lists')?>" class="add_tab">作者管理</a>
+						<a href="<?=site_url('admin/mclips/lists')?>" class="add_tab">图片</a>
 					</li>
 				</ul>
 			</div>
 			<div title="其他">
 				<ul>
-					<li><a href="<?=site_url('admin/pic/lists')?>" class="add_tab">图片管理</a></li>
-					<li><a href="<?=site_url('admin/attach/lists')?>" class="add_tab">附件管理</a></li>
 					<li>
-						<a href="<?=site_url('admin/type/lists')?>" class="add_tab left">分类管理</a>
-						<a href="<?=site_url('admin/type/op')?>" class="add_tab right">分类添加</a>
+						<a href="<?=site_url('admin/pic/lists')?>" class="add_tab left">管理员</a>
 					</li>
 				</ul>
 			</div>

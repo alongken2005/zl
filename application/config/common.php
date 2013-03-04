@@ -1,13 +1,25 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-//电影所属
-$config['area'][1]	= '电影预告';
-$config['area'][2]	= '往期回顾';
-$config['area'][4]	= '精品赏析';
+//下载地址设置
+$config['setting']['pc']		= '电影预告';
+$config['setting']['android']	= '往期回顾';
+$config['setting']['iphone']	= '往期回顾';
+$config['setting']['ipad']		= '往期回顾';
 
-$config['book_dir']['book']	= 'content/books/';
-$config['book_dir']['EST']	= 'magazine/est/xiaoxueshengshidai/';
-$config['book_dir']['BME']	= 'magazine/bme/dazuiyingyu/';
+//客服设置
+$config['service']['worktime']	= '9:00-18:00';
+$config['service']['tel1']		= '0571-3580766';
+$config['service']['tel2']		= '0571-3580766';
+$config['service']['qqgroup']	= '1233232';
+$config['service']['wapurl']	= 'http://wwww.ddddd.com';
+$config['service']['email']		= '3605622@rr.com';
 
-$config['pic_type'][1] = '影院相册';
-$config['pic_type'][3] = '电影首页焦点图';
+//文章内容分类设置
+$config['contType'][1]		= '新闻';
+$config['contType'][2]		= '公告';
+$config['contType'][3]		= '常见问题';
+$config['contType'][4]		= '游戏简介';
+$config['contType'][5]		= '新手资料';
+$config['contType'][6]		= '系统介绍';
+$config['contType'][7]		= '高手进阶';
+$config['contType'][8]		= '特色玩法';
 ?>

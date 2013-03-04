@@ -11,7 +11,6 @@ define('BASE_VIEW',	$config['base_url'].APPPATH.'views/');
 //主题视图文件夹
 define('THEME_VIEW', $config['base_url'].APPPATH.'views/'.THEME.'/');
 
-
 /*
 |--------------------------------------------------------------------------
 | Index File

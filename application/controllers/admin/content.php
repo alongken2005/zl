@@ -13,7 +13,6 @@ class Content extends CI_Controller
     {
 		parent::__construct();
 
-		$this->_data['thisClass'] = __CLASS__;
 		$this->load->model('base_mdl', 'base');
 		$this->config->load('common', TRUE);
 		$this->permission->power_check();
@@ -37,7 +36,7 @@ class Content extends CI_Controller
 		if($tid) {
 			$where['tid'] = $tid;
 		} else {
-			$where['tid !='] = 2;
+			//$where['tid !='] = 2;
 		}
 		//分页配置
         $this->load->library('gpagination');
@@ -52,7 +51,7 @@ class Content extends CI_Controller
 		$this->gpagination->target(site_url('admin/content/content?tid='.$tid));
 
 		$this->_data['pagination'] = $this->gpagination->getOutput();
-		$this->_data['lists'] = $this->base->get_data('content', $where, '*', $limit, $offset, 'sort DESC, cid DESC')->result_array();
+		$this->_data['lists'] = $this->base->get_data('content', $where, '*', $limit, $offset, 'sort DESC, id DESC')->result_array();
         $this->load->view('admin/content_list', $this->_data);
     }
 
@@ -67,8 +66,8 @@ class Content extends CI_Controller
 		$this->form_validation->set_error_delimiters('<span class="err">', '</span>');
 
 		if ($this->form_validation->run() == FALSE) {
-			if ($id = $this->input->get_post('cid')) {
-				$this->_data['content'] = $this->base->get_data('content', array('cid' => $id))->row_array();
+			if ($id = $this->input->get_post('id')) {
+				$this->_data['content'] = $this->base->get_data('content', array('id' => $id))->row_array();
 			}
 			$this->load->view('admin/content_op', $this->_data);
 		} else {
@@ -81,11 +80,11 @@ class Content extends CI_Controller
 				'sort'			=> $this->input->post('sort')
 			);
 
-			if ($id = $this->input->get('cid')) {
-				if ($this->base->update_data('content', array('cid' => $id), $deal_data)) {
-					$this->msg->showmessage('更新成功', site_url('admin/content/op?cid='.$id));
+			if ($id = $this->input->get('id')) {
+				if ($this->base->update_data('content', array('id' => $id), $deal_data)) {
+					$this->msg->showmessage('更新成功', site_url('admin/content/op?id='.$id));
 				} else {
-					$this->msg->showmessage('更新失败', site_url('admin/content/op?cid='.$id));
+					$this->msg->showmessage('更新失败', site_url('admin/content/op?id='.$id));
 				}
 			} else {
 				if ($this->base->insert_data('content', $deal_data)) {
