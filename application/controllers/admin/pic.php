@@ -16,7 +16,7 @@ class Pic extends CI_Controller
 		$this->permission->power_check();
 
 		$this->load->config('common');
-		$this->_data['typelist'] = $this->config->item('pic_type');
+		$this->_data['typelist'] = $this->config->item('picType');
     }
 
     /**
@@ -34,7 +34,7 @@ class Pic extends CI_Controller
     {
 		//分页配置
         $this->load->library('gpagination');
-		$total_num = $this->db->query('SELECT id FROM ab_pics WHERE place IN('.implode(',', array_keys($this->_data['typelist'])).')')->num_rows();
+		$total_num = $this->db->query('SELECT id FROM lz_pics WHERE place IN('.implode(',', array_keys($this->_data['typelist'])).')')->num_rows();
 		$page = $this->input->get('page') > 1 ? $this->input->get('page') : '1';
 		$limit = 25;
 		$offset = ($page - 1) * $limit;
@@ -45,7 +45,7 @@ class Pic extends CI_Controller
 		$this->gpagination->target(site_url('admin/pic/lists'));
 
 		$this->_data['pagination'] = $this->gpagination->getOutput();
-		$this->_data['lists'] = $this->db->query('SELECT * FROM ab_pics WHERE place IN('.implode(',', array_keys($this->_data['typelist'])).') ORDER BY sort DESC, id DESC LIMIT '.$offset.','.$limit)->result_array();
+		$this->_data['lists'] = $this->db->query('SELECT * FROM lz_pics WHERE place IN('.implode(',', array_keys($this->_data['typelist'])).') ORDER BY sort DESC, id DESC LIMIT '.$offset.','.$limit)->result_array();
         $this->load->view('admin/pic_list', $this->_data);
     }
 

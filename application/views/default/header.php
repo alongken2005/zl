@@ -39,4 +39,3 @@
 					<a href="" class="gamepay" style="margin-left: 0;"></a>
 				</div>
 			</div>
-		</div>

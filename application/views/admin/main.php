@@ -49,7 +49,7 @@
 						<a href="<?=site_url('admin/content/lists')?>" class="add_tab left">文章内容</a>
 					</li>
 					<li>
-						<a href="<?=site_url('admin/mclips/lists')?>" class="add_tab">图片</a>
+						<a href="<?=site_url('admin/pic/lists')?>" class="add_tab">图片</a>
 					</li>
 				</ul>
 			</div>

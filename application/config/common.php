@@ -22,4 +22,7 @@ $config['contType'][5]		= '新手资料';
 $config['contType'][6]		= '系统介绍';
 $config['contType'][7]		= '高手进阶';
 $config['contType'][8]		= '特色玩法';
+
+//图片分类
+$config['picType'][1]		= '首页焦点图';
 ?>

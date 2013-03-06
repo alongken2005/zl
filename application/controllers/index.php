@@ -16,7 +16,8 @@ class Index extends CI_Controller {
 	 * @deprecated 默认方法
 	 */
 	public function index() {
-		$this->load->view(THEME.'/index');
+		$this->_data['focus'] = $this->base->get_data('pics', array('place'=>1))->result_array();
+		$this->load->view(THEME.'/index', $this->_data);
 	}
 
 	/**

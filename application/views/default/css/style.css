@@ -43,6 +43,19 @@ textarea { overflow: auto; vertical-align: top; }
 .left_menu .gamepay { width:206px; height:106px; background-position: -0px -0px }
 .left_menu .gamepay:hover { background-position: -0px -106px }
 
+.right_content { float: right; width: 660px; position: relative; }
+
+.focusbg { width: 354px; height: 276px; background: url(../images/focus.png) no-repeat; }
+.gamefoucs { width: 322px; height: 212px; float: left; top: 14px; left: 17px; position: absolute; z-index: 10000; }
+.num { position: absolute; right: 2px; bottom: 5px; z-index: 10;}
+.num a { padding: 2px 8px; background: #000; color: #FFF; display: inline; text-align: center; margin-right: 3px; cursor: pointer;}
+.num a.cur { background: #84AA20; }
+.gamefoucs ul { position: relative; }
+.gamefoucs ul li { position: absolute; display: none; }
+.gamefoucs ul li a { position: relative; }
+.gamefoucs ul li img { width: 322px; height: 212px; border-radius: 10px; }
+
+
 .footer { padding: 10px 0; margin-top: 10px; color: #999; overflow: hidden; zoom: 1; }
 .footer .gh { float: left; margin-left: 200px; width: 44px; height: 47px; background: url(../images/gh.jpg) no-repeat; }
 .footer .footerinfo { float: left; margin-left: 20px; line-height: 25px; }
