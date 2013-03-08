@@ -1,0 +1,22 @@
+/* ----------------------------------------------------
+   created with http://www.texturepacker.com 
+   ----------------------------------------------------
+   $TexturePacker:SmartUpdate:f7c24ef4fcb4d46953e4376dfde11342$
+   ----------------------------------------------------
+
+   usage: <span class="{-spritename-} sprite"></span>
+
+   replace {-spritename-} with the sprite you like to use
+
+*/
+
+.sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(paybut.png);}
+
+.bank1 {width:245px; height:90px; background-position: -245px -270px}
+.bank2 {width:245px; height:90px; background-position: -0px -270px}
+.mobile1 {width:245px; height:90px; background-position: -245px -180px}
+.mobile2 {width:245px; height:90px; background-position: -0px -180px}
+.onecard1 {width:245px; height:90px; background-position: -245px -90px}
+.onecard2 {width:245px; height:90px; background-position: -0px -90px}
+.pay1 {width:245px; height:90px; background-position: -245px -0px}
+.pay2 {width:245px; height:90px; background-position: -0px -0px}

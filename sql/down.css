@@ -1,0 +1,19 @@
+/* ----------------------------------------------------
+   created with http://www.texturepacker.com 
+   ----------------------------------------------------
+   $TexturePacker:SmartUpdate:1fe682c306d0ad57929dcea1591c589b$
+   ----------------------------------------------------
+
+   usage: <span class="{-spritename-} sprite"></span>
+
+   replace {-spritename-} with the sprite you like to use
+
+*/
+
+.sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(down.png);}
+
+.android {width:185px; height:57px; background-position: -0px -212px}
+.gamepay1 {width:206px; height:106px; background-position: -0px -0px}
+.gamepay2 {width:206px; height:106px; background-position: -0px -106px}
+.ipad {width:185px; height:57px; background-position: -0px -326px}
+.iphone {width:185px; height:57px; background-position: -0px -269px}

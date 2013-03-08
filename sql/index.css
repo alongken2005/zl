@@ -1,0 +1,20 @@
+/* ----------------------------------------------------
+   created with http://www.texturepacker.com 
+   ----------------------------------------------------
+   $TexturePacker:SmartUpdate:f73c070e4a11d2ded9f3f6c1cbe53d33$
+   ----------------------------------------------------
+
+   usage: <span class="{-spritename-} sprite"></span>
+
+   replace {-spritename-} with the sprite you like to use
+
+*/
+
+.sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(index.png);}
+
+.left1 {width:45px; height:57px; background-position: -45px -57px}
+.left2 {width:45px; height:57px; background-position: -45px -0px}
+.point1 {width:18px; height:18px; background-position: -108px -0px}
+.point2 {width:18px; height:18px; background-position: -90px -0px}
+.right1 {width:45px; height:57px; background-position: -0px -57px}
+.right2 {width:45px; height:57px; background-position: -0px -0px}
