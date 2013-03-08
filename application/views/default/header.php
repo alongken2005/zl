@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>龙战</title>
-	<script type="text/javascript" src="http://a.tbcdn.cn/app/dp/vd/js/swfobject.js?t=200912211129.js"></script>
+	<script type="text/javascript" src="<?=base_url('./common/js/swfobject.js')?>"></script>
 	<script type="text/javascript" src="<?=base_url('./common/js/jquery.js')?>"></script>
 	<link rel="stylesheet" type="text/css" href="<?=THEME_VIEW?>/css/style.css"/>
 
@@ -36,6 +36,30 @@
 					<a href="" class="iphone"></a>
 					<a href="" class="ipad"></a>
 					<a href="" class="android" style="margin-bottom: 0;"></a>
-					<a href="" class="gamepay" style="margin-left: 0;"></a>
+					<a href="" class="gamepay" style="margin-left: 0; margin-bottom: 0px;"></a>
+				</div>
+				<?php
+					$this->load->config('common');
+					$service = $this->config->item('service');
+				?>
+				<div class="service">
+					工作时间：<?=$service['worktime']?>
+					<div class="tel"><?=$service['tel1']?></div>
+					休息时间：<?=$service['weekendtime']?>
+					<div class="tel"><?=$service['tel2']?></div>
+					手机登录网址：<br><?=$service['wapurl']?><br><br>
+					客服邮箱：<br><?=$service['email']?>
+				</div>
+
+				<div class="qst">
+					<div><a href="<?=site_url('index/clists?tid=3')?>" class="more">更多&raquo;</a></div>
+					<div class="clear"></div>
+				<?php
+					$qsts = $this->base->get_data('content', array('tid'=>3), '*', 2, 0, 'sort DESC, id DESC')->result_array();
+					foreach($qsts as $v):
+				?>
+					<div class="q"><a href="">Q：<?=$v['title']?></a></div>
+					<div class="a"><a href="">A：<?=cutstr($v['description'], 15, '')?></a></div>
+				<?php endforeach;?>
 				</div>
 			</div>

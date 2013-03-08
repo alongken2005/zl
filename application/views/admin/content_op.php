@@ -17,7 +17,7 @@ $this->load->view('admin/header');
 			<td>
 				<select name="tid">
 				<?php foreach($contType as $k=>$v):?>
-					<option value="<?=$k?>"><?=$v?></option>
+					<option value="<?=$k?>" <?=(isset($content['tid']) && $content['tid'] == $k) ? 'selected' : ''?>><?=$v?></option>
 				<?php endforeach;?>
 				</select>
 			</td>
@@ -45,7 +45,6 @@ $this->load->view('admin/header');
 		<tr>
 			<th></th>
 			<td>
-				<input type="hidden" name="tid" value="<?=set_value('tid', isset($content['tid']) ? $content['tid'] : $this->input->get('tid'))?>"/>
 				<input type="submit" name="submit" value="提 交" class="but2"/>
 			</td>
 		</tr>

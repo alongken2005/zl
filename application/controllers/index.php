@@ -9,82 +9,50 @@ class Index extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
+		$this->config->load('common', TRUE);
 		$this->load->model('base_mdl', 'base');
+		$this->_data['contType'] = $this->config->item('contType', 'common');
 	}
 
 	/**
 	 * @deprecated 默认方法
 	 */
 	public function index() {
-		$this->_data['focus'] = $this->base->get_data('pics', array('place'=>1))->result_array();
+		$this->_data['focus'] = $this->base->get_data('pics', array('place'=>1), '*', 0, 0, 'sort DESC')->result_array();
+		$this->_data['news'] = $this->base->get_data('content', array('tid'=>1))->result_array();
+
+		$this->_data['newer'] = $this->base->get_data('content', array('tid'=>5), '*', 3, 0, 'sort DESC')->result_array();
+		$this->_data['sys'] = $this->base->get_data('content', array('tid'=>6), '*', 3, 0, 'sort DESC')->result_array();
+		$this->_data['hig'] = $this->base->get_data('content', array('tid'=>7), '*', 3, 0, 'sort DESC')->result_array();
+		$this->_data['tes'] = $this->base->get_data('content', array('tid'=>8), '*', 3, 0, 'sort DESC')->result_array();
+
+		$this->_data['cuts'] = $this->base->get_data('pics', array('place'=>2), '*', 0, 0, 'sort DESC')->result_array();
 		$this->load->view(THEME.'/index', $this->_data);
 	}
 
-	/**
-	 * 登录
-	 */
-	public function login() {
-		$username		= $this->input->post('username');
-		$password		= $this->input->post('password');
-		$md5password	= md5($password);
+	public function clists() {
+		$tid = $this->input->get('tid');
+		$tid = $tid ? $tid : 1;
 
-		if($username == '' || $password == '') {
-			output(2101, '用户名或密码为空');			//用户名或密码为空
-		}
+		//分页配置
+        $this->load->library('gpagination');
+		$total_num = $this->base->get_data('content', array('tid'=>$tid))->num_rows();
+		$page = $this->input->get('page') > 1 ? $this->input->get('page') : '1';
+		$limit = 25;
+		$offset = ($page - 1) * $limit;
 
-		$user = $this->base->get_data('account', array('email'=>$username), 'id,status,email,password')->row_array();
+		$this->gpagination->currentPage($page);
+		$this->gpagination->items($total_num);
+		$this->gpagination->limit($limit);
+		$this->gpagination->target(site_url('index/clists?tid='.$tid));
 
-		if($user) {
-			if($user['password'] != $md5password) {
-				output(2102, '密码错误');		//密码错误
-			} else {
-				if($user['status'] == 1) {
-					$this->session->set_userdata(array('uid'=>$user['id'], 'email'=>$user['email']));
-					output(0, '登录成功');
-				} else {
-					output(2103, '账号被锁');	//账号被锁
-				}
-			}
-		} else {
-			output(2104, '用户不存在');			//用户不存在
-		}
+		$this->_data['pagination'] = $this->gpagination->getOutput();
+		$this->_data['tid'] = $tid;
+		$this->_data['lists'] = $this->base->get_data('content', array('tid'=>5), '*', $limit, $offset, 'sort DESC, id DESC');
+		$this->load->view(THEME.'/clists', $this->_data);
 	}
 
-	/**
-	 * 注册
-	 */
-	public function register() {
-		$email = $this->input->post('email');
-		$password = $this->input->post('password');
-		$password2 = $this->input->post('password2');
-		$timestamp = time();
+	public function cdetail() {
 
-		if(!is_email($email)) output(1005, '邮箱格式错误');
-
-		$count = $this->db->query('SELECT id FROM ab_account WHERE username = "'.mysql_escape_string($email).'" OR email = "'.mysql_escape_string($email).'"')->num_rows();
-		write_log('SELECT id FROM ab_account WHERE username = "'.mysql_escape_string($email).'" OR email = "'.mysql_escape_string($email).'"');
-		if($count > 0) output(2109, '该邮箱已被注册');
-		if(strlen($password) < 6) output(2106, '密码长度不能少于6位');
-		if($password != $password2) output(2107, '两次密码输入不一致');
-
-		if($this->db->query("UPDATE ab_account_id SET id = LAST_INSERT_ID(id+1)")) {
-			$uid = $this->db->insert_id();
-			$insert_data = array(
-				'id'			=> $uid,
-				'site_id'		=> 1,
-				'parent_id'		=> $uid,
-				'username'		=> $email,
-				'email'			=> $email,
-				'password'		=> md5($password),
-				'status'		=> 1,
-				'date_orig'		=> $timestamp,
-				'date_last'		=> $timestamp,
-			);
-			$this->base->insert_data('account', $insert_data);
-			$this->session->set_userdata(array('uid'=>$uid, 'email'=>$email));
-			output(0, '注册成功');
-		} else {
-			output(2108, '注册失败');
-		}
 	}
 }

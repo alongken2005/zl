@@ -35,26 +35,56 @@ textarea { overflow: auto; vertical-align: top; }
 .m6:hover { background-position: -170px -0px}
 
 .c2 { background: url(../images/c2.jpg) no-repeat top left; overflow: hidden; zoom: 1; }
-.left_menu { float: left; width: 200px; padding-left: 50px; }
-.left_menu .menu a { float: left; margin-bottom: 10px; margin-left: 10px; background-repeat: no-repeat;background-image: url(../images/down.png); }
+.left_menu { float: left; width: 240px; margin-left: 30px; padding-top: 20px; }
+.left_menu .menu { overflow: hidden; zoom: 1; padding-left: 15px; }
+.left_menu .menu a { float: left; margin-bottom: 5px; margin-left: 10px; background-repeat: no-repeat;background-image: url(../images/down.png); }
 .left_menu .iphone { width:185px; height:57px; background-position: -0px -269px }
 .left_menu .ipad { width:185px; height:57px; background-position: -0px -326px }
 .left_menu .android { width:185px; height:57px; background-position: -0px -212px }
 .left_menu .gamepay { width:206px; height:106px; background-position: -0px -0px }
 .left_menu .gamepay:hover { background-position: -0px -106px }
+.left_menu .service { width: 196px; height: 220px; font-size: 13px; font-weight: 600; padding: 50px 0 0 40px; background: url(../images/service.png) no-repeat; }
+.left_menu .service .tel { color: #FADC82; font-size: 16px; padding-left: 20px; margin-bottom: 8px; }
+.left_menu .qst { margin-left: 5px; width: 228px; height: 199px; background: url(../images/qst.png) no-repeat; }
+.left_menu .qst .more { padding: 20px 20px 14px 0; float: right; color: #FEE1A7; font-size: 16px; }
+.left_menu .qst .q a { float: left; width: 183px; padding-left: 25px; height: 30px; line-height: 30px; font-size: 14px; overflow: hidden; color: #B72927; }
+.left_menu .qst .a a { float: left; width: 183px; padding-left: 25px; height: 30px; line-height: 30px; font-size: 14px; overflow: hidden; color: #4B301D; }
 
-.right_content { float: right; width: 660px; position: relative; }
+.right_content { float: left; margin-left: 10px; width: 670px; position: relative; }
+.cbg { margin-top: 25px; float: left; width: 647px; height: 745px; background: url(../images/cbg.png) no-repeat; }
 
-.focusbg { width: 354px; height: 276px; background: url(../images/focus.png) no-repeat; }
-.gamefoucs { width: 322px; height: 212px; float: left; top: 14px; left: 17px; position: absolute; z-index: 10000; }
-.num { position: absolute; right: 2px; bottom: 5px; z-index: 10;}
-.num a { padding: 2px 8px; background: #000; color: #FFF; display: inline; text-align: center; margin-right: 3px; cursor: pointer;}
-.num a.cur { background: #84AA20; }
+.focusbg { float: left; margin-top: 20px; width: 354px; height: 276px; background: url(../images/focus.png) no-repeat; }
+.gamefoucs { width: 322px; height: 240px; float: left; top: 34px; left: 17px; position: absolute; z-index: 10000; }
+.num { position: absolute; right: 30px; bottom: 0; z-index: 10;}
+.num a { width: 18px; height: 18px; color: #FFF; float: left; text-align: center; margin-left: 15px; cursor: pointer; background-image:url(../images/index.png); background-repeat: no-repeat; background-position: -108px -0px; }
+.num a.cur { background-position: -90px -0px; }
 .gamefoucs ul { position: relative; }
 .gamefoucs ul li { position: absolute; display: none; }
-.gamefoucs ul li a { position: relative; }
+.gamefoucs ul li a { }
 .gamefoucs ul li img { width: 322px; height: 212px; border-radius: 10px; }
 
+.newsbg { float: left; margin-left: 3px; width: 280px; height: 232px; background: url(../images/news.png) no-repeat; padding-top: 66px; padding-left: 20px; }
+.newsbg a { float: left; width: 245px; padding-left: 10px; height: 43px; line-height: 43px; color: #311A0C; font-size: 14px; }
+.newsbg a:hover { background: url(../images/onnews.png) no-repeat top center; color: #FFF; text-shadow: #000000 1px 1px; text-decoration: none; }
+.newsbg a:hover .right { color: #03F6FE; }
+
+.res { margin-top: 10px; padding-top: 40px; padding-left: 150px; height: 222px; background: url(../images/res.png) no-repeat; }
+.res div { overflow: hidden; zoom: 1; height: 43px; line-height: 43px; margin-bottom: 10px; }
+.res a { float: left; width: 132px; font-size: 16px; color: #FDAE6C; overflow: hidden; }
+.res .more { width: 60px; text-align: center; }
+
+.cut_pic { height: 210px; padding: 35px 0 0 55px; background: url(../images/shot_bg.png) no-repeat center top; }
+#bigDiv { float: left; width: 780px; height: 160px; overflow: hidden; position: relative; }
+#myList { position: absolute; left: 0px; right: 0px; z-index: 2; width: 20000px; }
+#myList li { float: left; text-align: center; }
+#myList li a { float: left; text-align: center; font-size: 14px; text-shadow: #000 1px 1px; }
+#myList img { width: 185px; height: 125px; margin: 0 4px; border: 1px solid #000; }
+.forward, .backward { float: left; width: 35px; height: 57px; margin-top: 35px; overflow: hidden; zoom: 1; }
+.forward a,.backward a { float: left; background-repeat: no-repeat;background-image:url(../images/index.png); width: 35px; height: 57px; text-indent: -999em; }
+.forward a { background-position: -8px -57px; }
+.forward a:hover { background-position: -8px 0; }
+.backward a { background-position: -45px -57px; }
+.backward a:hover { background-position: -45px 0; }
 
 .footer { padding: 10px 0; margin-top: 10px; color: #999; overflow: hidden; zoom: 1; }
 .footer .gh { float: left; margin-left: 200px; width: 44px; height: 47px; background: url(../images/gh.jpg) no-repeat; }

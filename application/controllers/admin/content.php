@@ -81,17 +81,11 @@ class Content extends CI_Controller
 			);
 
 			if ($id = $this->input->get('id')) {
-				if ($this->base->update_data('content', array('id' => $id), $deal_data)) {
-					$this->msg->showmessage('更新成功', site_url('admin/content/op?id='.$id));
-				} else {
-					$this->msg->showmessage('更新失败', site_url('admin/content/op?id='.$id));
-				}
+				$this->base->update_data('content', array('id' => $id), $deal_data);
+				$this->msg->showmessage('更新成功', site_url('admin/content/lists'));
 			} else {
-				if ($this->base->insert_data('content', $deal_data)) {
-					$this->msg->showmessage('添加成功', site_url('admin/content/lists?tid='.$this->input->post('tid')));
-				} else {
-					$this->msg->showmessage('添加失败', site_url('admin/content/op?tid='.$this->input->post('tid')));
-				}
+				$this->base->insert_data('content', $deal_data);
+				$this->msg->showmessage('添加成功', site_url('admin/content/lists'));
 			}
 		}
     }

@@ -94,7 +94,7 @@ class Pic extends CI_Controller
 					'source_image'	=> $upload_data['full_path'],
 					'maintain_ratio'=> true,
 					'width'			=> 200,
-					'height'		=> 150
+					'height'		=> 135
 				);
 
 				$this->load->library('image_lib', $config2);
