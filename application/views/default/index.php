@@ -3,10 +3,10 @@ $this->load->view(THEME.'/header');
 ?>
 <script type="text/javascript" src="<?=THEME_VIEW?>/js/slide.js"></script>
 <div class="right_content">
-	<div class="focusbg">
+	<div class="focusbg png">
 		<div class="movie_slide gamefoucs" >
 			<div class="num">
-			<?php for($i=0, $length = count($focus); $i<$length; $i++): echo '<a></a>'; endfor;?>
+			<?php for($i=0, $length = count($focus); $i<$length; $i++): echo '<a class="png"></a>'; endfor;?>
 			</div>
 			<ul>
 			<?php
@@ -22,15 +22,16 @@ $this->load->view(THEME.'/header');
 		</div>
 	</div>
 
-	<div class="newsbg">
+	<div class="newsbg png">
+		<a href="<?=site_url('index/clists?tid=1')?>" class="more"></a>
 	<?php foreach($news as $v):?>
-		<a href="<?=site_url('index/detail?id='.$v['id'])?>"><span class="left"><?=$v['title']?></span><span class="right" style="padding-right:5px;"><?=date('m-d',$v['ctime'])?></span></a>
+		<a href="<?=site_url('index/detail?id='.$v['id'])?>" class="png"><span class="left"><?=$v['title']?></span><span class="right" style="padding-right:5px;"><?=date('m-d',$v['ctime'])?></span></a>
 	<?php endforeach;?>
 	</div>
 
 	<div class="clear"></div>
 
-	<div class="res">
+	<div class="res png">
 		<div class="newer">
 		<?php foreach($newer as $v):?>
 			<a href="<?=site_url('index/cdetail?id='.$v['id'])?>"><?=$v['title']?></a>
@@ -59,8 +60,8 @@ $this->load->view(THEME.'/header');
 </div>
 <div class="clear"></div>
 
-<div class="cut_pic">
-	<div class="backward"><a href="javascript:void(0)"  onclick="picList('pre')" id="btnPre">prev</a></div>
+<div class="cut_pic png">
+	<div class="backward png"><a href="javascript:void(0)" onclick="picList('pre')" id="btnPre" class="png">prev</a></div>
 	<div id="bigDiv">
 		<ul id="myList">
 		<?php foreach($cuts as $v):?>
@@ -72,7 +73,7 @@ $this->load->view(THEME.'/header');
 		<?php endforeach;?>
 		</ul>
 	</div>
-	<div class="forward"><a href="javascript:void(0)" id="btnNext" onclick="picList('next')">next</a></div>
+	<div class="forward"><a href="javascript:void(0)" id="btnNext" onclick="picList('next')" class="png">next</a></div>
 </div>
 <script type="text/javascript" src="<?=base_url('./common/fancybox/jquery.fancybox-1.3.4.pack.js')?>"></script>
 <script type="text/javascript" src="<?=base_url('./common/fancybox/jquery.mousewheel-3.0.4.pack.js')?>"></script>

@@ -1,9 +1,9 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 //下载地址设置
-$config['setting']['pc']		= '电影预告';
-$config['setting']['android']	= '往期回顾';
-$config['setting']['iphone']	= '往期回顾';
-$config['setting']['ipad']		= '往期回顾';
+$config['down']['pc']		= base_url('down/pc.rar');
+$config['down']['android']	= base_url('down/android.rar');
+$config['down']['iphone']	= base_url('down/iphone.rar');
+$config['down']['ipad']		= base_url('down/ipad.rar');
 
 //客服设置
 $config['service']['worktime']	= '9:00-18:00';

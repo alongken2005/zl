@@ -51,12 +51,8 @@
 					<li>
 						<a href="<?=site_url('admin/pic/lists')?>" class="add_tab">图片</a>
 					</li>
-				</ul>
-			</div>
-			<div title="其他">
-				<ul>
 					<li>
-						<a href="<?=site_url('admin/pic/lists')?>" class="add_tab left">管理员</a>
+						<a href="<?=site_url('admin/adminer/lists')?>" class="add_tab left">管理员</a>
 					</li>
 				</ul>
 			</div>

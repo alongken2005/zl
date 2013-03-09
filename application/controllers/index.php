@@ -9,15 +9,18 @@ class Index extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		$this->config->load('common', TRUE);
+		$this->config->load('common');
 		$this->load->model('base_mdl', 'base');
-		$this->_data['contType'] = $this->config->item('contType', 'common');
+		$this->_data['contType'] = $this->config->item('contType');
+		$this->_data['service'] = $this->config->item('service');
+		$this->_data['down'] = $this->config->item('down');
 	}
 
 	/**
 	 * @deprecated 默认方法
 	 */
 	public function index() {
+		$this->_data['qst'] = 'no';
 		$this->_data['focus'] = $this->base->get_data('pics', array('place'=>1), '*', 0, 0, 'sort DESC')->result_array();
 		$this->_data['news'] = $this->base->get_data('content', array('tid'=>1))->result_array();
 
@@ -38,7 +41,7 @@ class Index extends CI_Controller {
         $this->load->library('gpagination');
 		$total_num = $this->base->get_data('content', array('tid'=>$tid))->num_rows();
 		$page = $this->input->get('page') > 1 ? $this->input->get('page') : '1';
-		$limit = 25;
+		$limit = 15;
 		$offset = ($page - 1) * $limit;
 
 		$this->gpagination->currentPage($page);
@@ -48,11 +51,23 @@ class Index extends CI_Controller {
 
 		$this->_data['pagination'] = $this->gpagination->getOutput();
 		$this->_data['tid'] = $tid;
-		$this->_data['lists'] = $this->base->get_data('content', array('tid'=>5), '*', $limit, $offset, 'sort DESC, id DESC');
+		$this->_data['lists'] = $this->base->get_data('content', array('tid'=>$tid), '*', $limit, $offset, 'sort DESC, id DESC')->result_array();
 		$this->load->view(THEME.'/clists', $this->_data);
 	}
 
 	public function cdetail() {
+		$id = $this->input->get('id');
+		$this->_data['row'] = $this->base->get_data('content', array('id'=>$id))->row_array();
+		$this->load->view(THEME.'/cdetail', $this->_data);
+	}
 
+	public function qst() {
+		$this->_data['tid'] = 3;
+		$this->_data['lists'] = $this->base->get_data('content', array('tid'=>3), '*', 0, 0, 'sort DESC, id DESC')->result_array();
+		$this->load->view(THEME.'/qst', $this->_data);
+	}
+
+	public function pay() {
+		$this->load->view(THEME.'/pay', $this->_data);
 	}
 }
