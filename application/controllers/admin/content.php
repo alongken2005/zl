@@ -94,8 +94,8 @@ class Content extends CI_Controller
     * @deprecated 文章删除
     */
     public function del () {
-        $id = intval($this->input->get('cid'));
-        if($id && $this->base->del_data('content', array('cid' => $id))) {
+        $id = intval($this->input->get('id'));
+        if($id && $this->base->del_data('content', array('id' => $id))) {
         	exit('ok');
         } else {
         	exit('no');

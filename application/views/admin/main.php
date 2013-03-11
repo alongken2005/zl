@@ -39,7 +39,7 @@
 <body>
 	<div id="topmenu" class="header">
 		<?='欢迎你，'.get_cookie('username').'&nbsp;<a href="'.site_url('admin/login/login_out').'">退出</a>'?>
-		| <a href="<?=site_url('movie')?>" class="l-link2" target="_blank">龙战官网首页</a>
+		| <a href="<?=site_url()?>" class="l-link2" target="_blank">龙战官网首页</a>
 	</div>
 	<div id="mainbox" style="width:99.3%; margin:0 auto; margin-top:4px; ">
 		<div position="left"  title="主要菜单" class="slider">
