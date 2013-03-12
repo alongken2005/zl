@@ -9,7 +9,7 @@
 	<script type="text/javascript">
 		$(function() {
 			$('#down').mousedown(function() {
-				window.open('<?=$down['iphone']?>')
+				window.open("<?=$down['pc']?>")
 			})
 
 			swfobject.embedSWF("<?=THEME_VIEW?>images/logo.swf", 'logo', '199', '177', '9.0.0', null, null, {wmode: 'transparent'});
