@@ -22,7 +22,7 @@ class Index extends CI_Controller {
 	public function index() {
 		$this->_data['qst'] = 'no';
 		$this->_data['focus'] = $this->base->get_data('pics', array('place'=>1), '*', 0, 0, 'sort DESC')->result_array();
-		$this->_data['news'] = $this->base->get_data('content', array('tid'=>1))->result_array();
+		$this->_data['news'] = $this->base->get_data('content', array('tid'=>1), '*', 5, 0, 'sort DESC, ctime DESC')->result_array();
 
 		$this->_data['newer'] = $this->base->get_data('content', array('tid'=>5), '*', 3, 0, 'sort DESC')->result_array();
 		$this->_data['sys'] = $this->base->get_data('content', array('tid'=>6), '*', 3, 0, 'sort DESC')->result_array();
@@ -51,7 +51,7 @@ class Index extends CI_Controller {
 
 		$this->_data['pagination'] = $this->gpagination->getOutput();
 		$this->_data['tid'] = $tid;
-		$this->_data['lists'] = $this->base->get_data('content', array('tid'=>$tid), '*', $limit, $offset, 'sort DESC, id DESC')->result_array();
+		$this->_data['lists'] = $this->base->get_data('content', array('tid'=>$tid), '*', $limit, $offset, 'sort DESC, ctime DESC')->result_array();
 		$this->load->view(THEME.'/clists', $this->_data);
 	}
 

@@ -8,12 +8,12 @@
 	<link rel="stylesheet" type="text/css" href="<?=THEME_VIEW?>/css/style.css"/>
 	<script type="text/javascript">
 		$(function() {
-			$('#down').mousedown(function() {
-				window.open("<?=$down['pc']?>")
-			})
-
 			swfobject.embedSWF("<?=THEME_VIEW?>images/logo.swf", 'logo', '199', '177', '9.0.0', null, null, {wmode: 'transparent'});
-			swfobject.embedSWF("<?=THEME_VIEW?>images/down.swf", 'downflash', '450', '103', '9.0.0', null, null, {wmode: 'transparent'});
+			$('.android, .gamepay').click(function() {
+				/*alert('暂时不开放');
+				return false;*/
+				return true;
+			})
 		})
 	</script>
 </head>
@@ -22,7 +22,7 @@
 <tr>
 	<td width="50%" class="body_left"></td>
 	<td>
-	<div class="box">
+	<div class="box" style="position: relative">
 		<div class="header">
 			<a href="<?=site_url()?>" class="m1 png"></a>
 			<a href="<?=site_url('index/clists?tid=1')?>" class="m2 png"></a>
@@ -32,18 +32,14 @@
 			<a href="#" class="m6 png"></a>
 		</div>
 		<div id="logo"></div>
-		<div id="down">
-			<div id="downflash">
-			</div>
-		</div>
-		<div class="clear"></div>
+		<a id="down" class="png" href="<?=$down['pc']?>" target="_blank"></a>
 
 		<div class="c2">
 			<div class="left_menu">
 				<div class="menu">
-					<a href="<?=$down['iphone']?>" class="iphone png" target="_blank"></a>
-					<a href="<?=$down['ipad']?>" class="ipad png" target="_blank"></a>
-					<a href="<?=$down['android']?>" class="android png" style="margin-bottom: 0;" target="_blank"></a>
+					<a href="<?=$down['iphone']?>" class="iphone png" target="_blank"><?=$down['iphone_ver']?></a>
+					<a href="<?=$down['ipad']?>" class="ipad png" target="_blank"><?=$down['ipad_ver']?></a>
+					<a href="<?=$down['android']?>" class="android png" style="margin-bottom: 0;" target="_blank"><?=$down['android_ver']?></a>
 					<a href="<?=site_url('index/pay')?>" class="gamepay png" style="margin-left: 0; margin-bottom: 0px;"></a>
 				</div>
 				<?php
@@ -54,8 +50,16 @@
 					<div class="tel"><?=$service['tel1']?></div>
 					休息时间：<?=$service['weekendtime']?>
 					<div class="tel"><?=$service['tel2']?></div>
-					手机登录网址：<br><?=$service['wapurl']?><br><br>
+					<div class="line">
+					手机登录网址：<br><?=$service['wapurl']?>
+					</div>
+					<div class="line">
 					客服邮箱：<br><?=$service['email']?>
+					</div>
+					<div class="line">
+					每周例行维护时间：
+					<div class="tel"><?=$service['maintain']?></div>
+					</div>
 				</div>
 			<?php if(!(isset($qst) && $qst == 'no')):?>
 				<div class="qst png">

@@ -25,7 +25,7 @@ $this->load->view(THEME.'/header');
 	<div class="newsbg png">
 		<a href="<?=site_url('index/clists?tid=1')?>" class="more"></a>
 	<?php foreach($news as $v):?>
-		<a href="<?=site_url('index/detail?id='.$v['id'])?>" class="png"><span class="left"><?=$v['title']?></span><span class="right" style="padding-right:5px;"><?=date('m-d',$v['ctime'])?></span></a>
+		<a href="<?=site_url('index/cdetail?id='.$v['id'])?>" class="png"><span class="left"><?=$v['title']?></span><span class="right" style="padding-right:5px;"><?=date('m-d',$v['ctime'])?></span></a>
 	<?php endforeach;?>
 	</div>
 

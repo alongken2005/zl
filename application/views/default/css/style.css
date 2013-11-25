@@ -19,8 +19,8 @@ textarea { overflow: auto; vertical-align: top; }
 .body_right { background: url(../images/body_right.jpg) no-repeat left top;}
 .header { height: 354px; overflow: hidden; zoom: 1; padding-left: 75px; background: url(../images/c1.jpg) no-repeat; }
 .header a { float: left; width: 85px; height: 24px; margin-top: 18px; display: inline; background-image:url(../images/menu.png); background-repeat: no-repeat; background-position: -1000px -1000px }
-#logo { width: 199px; height: 177px; left: 535px; top: 1px; position: absolute; }
-#down { width: 450px; height: 103px; right: 160px; top: 230px; position: absolute; z-index: 10; }
+#logo { width: 199px; height: 177px; left: 385px; top: 1px; position: absolute; }
+#down { right: 60px; top: 230px; position: absolute; z-index: 10;background-repeat: no-repeat; width:424px; height:83px; background-position: 0 0; background-image: url(../images/down.tps.png); }
 .m1 { margin-left: 7px; }
 .m1:hover { background-position: -85px 0}
 .m2 { margin-left: 33px; }
@@ -37,14 +37,16 @@ textarea { overflow: auto; vertical-align: top; }
 .c2 { background: url(../images/c2.jpg) no-repeat top left; overflow: hidden; zoom: 1; }
 .left_menu { float: left; width: 240px; margin-left: 30px; padding-top: 20px; display: inline; }
 .left_menu .menu { overflow: hidden; zoom: 1; padding-left: 15px; }
-.left_menu .menu a { float: left; margin-bottom: 5px; margin-left: 10px; background-repeat: no-repeat;background-image: url(../images/down.png); }
-.left_menu .iphone { width:185px; height:57px; background-position: -0px -269px }
-.left_menu .ipad { width:185px; height:57px; background-position: -0px -326px }
-.left_menu .android { width:185px; height:57px; background-position: -0px -212px }
-.left_menu .gamepay { width:206px; height:106px; background-position: -0px -0px }
-.left_menu .gamepay:hover { background-position: -0px -106px }
-.left_menu .service { width: 196px; height: 220px; font-size: 13px; font-weight: 600; padding: 50px 0 0 40px; background: url(../images/service.png) no-repeat; }
-.left_menu .service .tel { color: #FADC82; font-size: 16px; padding-left: 20px; margin-bottom: 8px; }
+.left_menu .menu a { padding-top: 28px; width:185px; height:29px; text-align: center; font-size: 16px; color: #FFF; float: left; margin-bottom: 5px; margin-left: 10px; background-repeat: no-repeat;background-image: url(../images/down.tps.png); font-family: '微软雅黑'; }
+.left_menu .menu a:hover { color: #FFF; text-decoration: none; }
+.left_menu .iphone { background-position: 0 -189px }
+.left_menu .ipad { background-position: -185px -189px }
+.left_menu .android { background-position: -0px -246px }
+.left_menu a.gamepay { width:206px; height:78px; background-position: -206px -83px }
+.left_menu a.gamepay:hover { background-position: -0px -83px }
+.left_menu .service { width: 196px; height: 220px; line-height: 1.35; font-size: 13px; font-weight: 600; padding: 40px 0 0 40px; background: url(../images/service.png) no-repeat; }
+.left_menu .service .tel { color: #FADC82; font-size: 14px; padding-left: 20px; }
+.left_menu .service .line { padding-top: 10px; }
 .left_menu .qst { margin-left: 5px; width: 228px; height: 199px; background: url(../images/qst.png) no-repeat; }
 .left_menu .qst .more { padding: 20px 20px 14px 0; float: right; color: #FEE1A7; font-size: 16px; }
 .left_menu .qst .q a { float: left; width: 183px; padding-left: 25px; height: 30px; line-height: 30px; font-size: 14px; overflow: hidden; color: #B72927; }
